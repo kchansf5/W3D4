@@ -1,0 +1,37 @@
+/* PUT FLUID GRID CODE HERE */
+/*
+section {
+    width: 70%;
+    vertical-align: top;
+    background-color: orange
+}
+
+aside {
+    width: 20%;
+    margin-right: 15px;
+    background-color: blue
+} */
+
+/* .recipe_image {
+  width: 100%
+} */
+
+.col {
+      display: inline-block;
+}
+
+.col-1 {
+  width: 20%;
+  margin-right: 15px;
+  background-color: blue
+}
+
+.col-2 {
+  width: 70%;
+  vertical-align: top;
+  background-color: orange
+}
+
+.col-2 img {
+  width: 100%
+}
