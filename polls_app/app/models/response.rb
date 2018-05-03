@@ -17,7 +17,7 @@ class Response < ApplicationRecord
   foreign_key: :user_key,
   class_name: :User
 
-  has_one :answer_choice,
+  belongs_to :answer_choice,
   primary_key: :id,
   foreign_key: :answer_key,
   class_name: :AnswerChoice

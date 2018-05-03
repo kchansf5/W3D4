@@ -5,27 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ActiveRecord::Base.transaction do
 User.destroy_all
 
   # Wizards
-  hagrid = User.create!(username: 'Rubeus Hagrid'),
-  harry = User.create!(username: 'Harry Potter'),
-  hermione = User.create!(username: 'Hermione Granger'),
-  dumbledore = User.create!(username: "Albus Dumbledore"),
+  hagrid = User.create!(username: 'Rubeus Hagrid')
+  harry = User.create!(username: 'Harry Potter')
+  hermione = User.create!(username: 'Hermione Granger')
+  dumbledore = User.create!(username: "Albus Dumbledore")
 
   Poll.destroy_all
-  poll1 = Poll.create!(author_id: hagrid.id, body: "You're a wizard, Harry.")
+  poll1 = Poll.create!(author_id: hagrid.id, title: "You're a wizard, Harry.")
 
-  poll2 = Poll.create!(author_id: hagrid.id, body: "I solemnly swear I am up to no good.")
+  poll2 = Poll.create!(author_id: hagrid.id, title: "I solemnly swear I am up to no good.")
 
-  poll3 = Poll.create!(author_id: hermione.id, body: "It’s wingardium leviOsa, not leviosAH.")
-  poll4 = Poll.create!(author_id: hermione.id, body: "We could all have been killed or worse, expelled.")
-  poll5 = Poll.create!(author_id: hermione.id, body: "Just because you have the emotional range of a teaspoon doesn’t mean we all have.")
+  poll3 = Poll.create!(author_id: hermione.id, title: "It’s wingardium leviOsa, not leviosAH.")
+  poll4 = Poll.create!(author_id: hermione.id, title: "We could all have been killed or worse, expelled.")
+  poll5 = Poll.create!(author_id: hermione.id, title: "Just because you have the emotional range of a teaspoon doesn’t mean we all have.")
 
-  poll6 = Poll.create!(author_id: dumbledore.id, body: "Words are, in my not-so-humble opinion, our most inexhaustible source of magic.")
-  poll7 = Poll.create!(author_id: dumbledore.id, body: "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.")
-  poll8 = Poll.create!(author_id: dumbledore.id, body: "It is our choices, Harry, that show what we truly are, far more than our abilities.")
-  poll9 = Poll.create!(author_id: dumbledore.id, body: "Happiness can be found even in the darkest of times if only one remembers to turn on the light.")
+  poll6 = Poll.create!(author_id: dumbledore.id, title: "Words are, in my not-so-humble opinion, our most inexhaustible source of magic.")
+  poll7 = Poll.create!(author_id: dumbledore.id, title: "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.")
+  poll8 = Poll.create!(author_id: dumbledore.id, title: "It is our choices, Harry, that show what we truly are, far more than our abilities.")
+  poll9 = Poll.create!(author_id: dumbledore.id, title: "Happiness can be found even in the darkest of times if only one remembers to turn on the light.")
 
   Question.destroy_all
 
@@ -46,6 +47,7 @@ User.destroy_all
     answer2 = AnswerChoice.create!(answer: "No", question_id: question1.id)
     answer3 = AnswerChoice.create!(answer: "Yes", question_id: question2.id)
     answer4 = AnswerChoice.create!(answer: "No", question_id: question2.id)
+    answer4 = AnswerChoice.create!(answer: "Maybe", question_id: question2.id)
     answer5 = AnswerChoice.create!(answer: "Yes", question_id: question3.id)
     answer6 = AnswerChoice.create!(answer: "No", question_id: question3.id)
     answer7 = AnswerChoice.create!(answer: "Yes", question_id: question4.id)
@@ -93,8 +95,8 @@ User.destroy_all
   Response.create!(user_key: dumbledore.id, question_key: question3.id, answer_key: answer18.id)
   Response.create!(user_key: dumbledore.id, question_key: question4.id, answer_key: answer19.id)
   Response.create!(user_key: dumbledore.id, question_key: question5.id, answer_key: answer20.id)
-  Response.create!(user_key: dumbledore.id, question_key: question6.id, answer_key: answer21.id)
-  Response.create!(user_key: dumbledore.id, question_key: question7.id, answer_key: answer22.id)
-  Response.create!(user_key: dumbledore.id, question_key: question8.id, answer_key: answer23.id)
-  Response.create!(user_key: dumbledore.id, question_key: question9.id, answer_key: answer24.id)
+  Response.create!(user_key: dumbledore.id, question_key: question6.id, answer_key: answer19.id)
+  Response.create!(user_key: dumbledore.id, question_key: question7.id, answer_key: answer18.id)
+  Response.create!(user_key: dumbledore.id, question_key: question8.id, answer_key: answer17.id)
+  Response.create!(user_key: dumbledore.id, question_key: question9.id, answer_key: answer16.id)
 end
