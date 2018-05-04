@@ -22,4 +22,14 @@ class Response < ApplicationRecord
   foreign_key: :answer_key,
   class_name: :AnswerChoice
 
+  belongs_to :question,
+  primary_key: :id,
+  foreign_key: :question_key,
+  class_name: :Question
+
+
+  def sibling_responses
+
+  end
+
 end

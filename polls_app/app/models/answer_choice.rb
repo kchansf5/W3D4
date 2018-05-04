@@ -17,7 +17,7 @@ class AnswerChoice < ApplicationRecord
   foreign_key: :question_id,
   class_name: :Question
 
-  has_one :responses,
+  has_many :responses,
   primary_key: :id,
   foreign_key: :answer_key,
   class_name: :Response
